@@ -1,4 +1,5 @@
 set(CMAKE_SYSTEM_NAME Linux)
+set(CMAKE_SYSTEM_PROCESSOR arm)
 
 set(llvm "/usr/local/opt/llvm/bin")
 set(sysroot "/opt/l4t-gcc/gcc-aarch64-linux-gnu")
@@ -8,4 +9,7 @@ set(target_ops "--target=aarch64-arm-linux-gnueabihf -march=armv8-a -mcpu=cortex
 set(CMAKE_SYSROOT ${sysroot})
 set(CMAKE_CXX_FLAGS "${target_ops} -Os -ffunction-sections -fdata-sections" CACHE STRING "" FORCE)
 set(CMAKE_CXX_LINK_FLAGS "${target_ops} -fuse-ld=${llvm}/ld.lld -Wl,--gc-sections")
+set(CMAKE_C_COMPILER ${llvm}/clang)
 set(CMAKE_CXX_COMPILER ${llvm}/clang++)
+set(CMAKE_AR ${llvm}/llvm-ar)
+set(CMAKE_RANLIB ${llvm}/llvm-ranlib)
