@@ -38,6 +38,8 @@ cmake [-G generator] [-DYAML_BUILD_SHARED_LIBS=ON|OFF] ..
 
   * For more options on customizing the build, see the [CMakeLists.txt](https://github.com/jbeder/yaml-cpp/blob/master/CMakeLists.txt) file.
 
+  * Airhart: For L4T, add `-DCMAKE_TOOLCHAIN_FILE=../l4t.cmake`: `cmake -DCMAKE_TOOLCHAIN_FILE=../l4t.cmake ..`, then `make -j8` to build it
+
 4. Build it!
 
 5. To clean up, just remove the `build` directory.
